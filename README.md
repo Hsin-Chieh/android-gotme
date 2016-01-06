@@ -7,5 +7,6 @@ Author : <br>
 巫謹佑 U10216019<br>
 陳安琪 U10216026<br>
 吳新捷 U10116004<br>
+<h2><a href="https://drive.google.com/file/d/0B1dy6kLpu3UVMXdZUEtjeHU3eUU/view?usp=sharing">Download</a></h2>
 <h2><a href="https://github.com/Hsin-Chieh/android-gotme">Github</a></h2>
 <h2><a href="https://docs.google.com/presentation/d/1qgVovZPNND-yHLjUYKt3d6PFvvKAdhYMVJCkgmXe8ZU/edit?usp=sharing">詳細簡介</a><h2>
