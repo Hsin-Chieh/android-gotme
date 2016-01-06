@@ -1,4 +1,5 @@
 # android-gotme 
+<img src="./home.jpg"/><br>
 2015 Android project gotme
 打造地表最實用名片盒app<br>
 變成一款值得留在手機裡的app<br>
