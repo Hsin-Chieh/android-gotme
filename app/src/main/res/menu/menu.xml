@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.example.acctionbaractivitydemo.MainActivity" >
+<item
+    android:id="@+id/multi_select"
+    android:title="multi_select"
+    app:showAsAction="withText|ifRoom"/>
+    <!--選項會以圖像顯示在ToolBar上-->
+
+<item
+    android:id="@+id/action_edit"
+    android:orderInCategory="100"
+    android:title="show_in_detail"
+    app:showAsAction="never"/>
+    <!--以文字顯示在Menu裡-->
+
+</menu>

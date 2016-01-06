@@ -48,19 +48,27 @@ public class MainActivity extends AppCompatActivity {
     }
 }*/
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.view.KeyEvent;
 
 import com.example.angel.topic.Adapter.TabFragmentPagerAdapter;
 import com.example.angel.topic.Fragment.Fragment_Tab_1;
 import com.example.angel.topic.Fragment.Fragment_Tab_2;
 import com.example.angel.topic.Fragment.Fragment_Tab_3;
 import com.example.angel.topic.Fragment.Fragment_Tab_4;
+import com.example.angel.topic.Json.GCMHandle;
+import com.example.angel.topic.Json.SendJSON;
+import com.example.angel.topic.Json.UploadImage;
 import com.example.angel.topic.Widget.SlidingTabLayout;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> fragments;
     private TabFragmentPagerAdapter viewPager_Adapter;
     private Fragment_Tab_2 place_fragment;
+    private GCMHandle gcmHandle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +93,23 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Navigation Icon 要設定在 setSupoortActionBar 才有作用
         // 否則會出現 back button
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setNavigationIcon(R.mipmap.logo);
         findView();
+        gcmHandle = new GCMHandle(getApplication());
+        gcmHandle.registerGCM();
+        gcmHandle.sendMessage("Register", "account_test", "aqqqqq", "");
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.accumulate("name" , "jacky");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        new SendJSON(jsonObject , "account_test").execute();
+        new UploadImage("" , "account_test").execute();
+
+
 
 
         /*slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
@@ -100,6 +124,46 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(viewPager_Adapter);*/
     }
+    public boolean onKeyDown(int keyCode,KeyEvent event){
+
+        if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount()==0){   //確定按下退出鍵and防止重複按下退出鍵
+            dialog();
+        }
+
+        return false;
+    }
+
+    private void dialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this); //創建訊息方塊
+
+        builder.setMessage("結束應用程式?");
+
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            @Override
+
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss(); //dismiss為關閉dialog,Activity還會保留dialog的狀態
+
+                MainActivity.this.finish();//關閉activity
+
+            }
+
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+            @Override
+
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+
+        });
+
+        builder.create().show();
+    }
 
     /*//在Activity元件中把處理回應的工作交由Fragment執行
     @Override
@@ -111,13 +175,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        menu.add("編輯");
-
-        return super.onCreateOptionsMenu(menu);
-    }
 
     // 初始化控件
     private void findView() {

@@ -95,7 +95,7 @@ public class AboutActivity extends Activity {
                         break;
                     case ViewPager.SCROLL_STATE_IDLE://什麼事都沒做
                         if (mViewPager.getCurrentItem() == mViewPager.getAdapter().getCount() - 1 && Scrolled) {
-                            startActivity(new Intent(AboutActivity.this, MainActivity.class));
+                            startActivity(new Intent(AboutActivity.this, LoginActivity.class));
                             finish();
 
                         }

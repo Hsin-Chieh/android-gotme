@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.BookFragment"
-    android:weightSum="1"
+    android:weightSum="9"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="179dp"
-        android:layout_height="177dp"
-        android:id="@+id/imageView"
+        android:layout_width="104dp"
+        android:layout_height="103dp"
+        android:id="@+id/photoA"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp"
+        android:layout_weight="1"
+        android:layout_marginTop="120dp"
         android:src="@mipmap/ic_launcher1"
         android:layout_gravity="center_horizontal" />
 
@@ -22,9 +23,34 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="你還沒有設定喔"
-        android:textColor="@color/gray"
-        android:layout_margin="20dp"
-        android:id="@+id/textView4"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:layout_weight="2"
+        android:id="@+id/nameA"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/phoneA"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/emailA"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noteA"
+        android:layout_weight="2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

@@ -37,16 +37,16 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
         String tabName = "";
         switch (position){
             case 0:
-                tabName = "Mine";
+                tabName = "我的名片";
                 break;
             case 1:
-                tabName = "CardBox";
+                tabName = "名片盒";
                 break;
             case 2:
-                tabName = "Sent";
+                tabName = "搜尋";
                 break;
             case 3:
-                tabName = "Set";
+                tabName = "關於我們";
                 break;
 
         }

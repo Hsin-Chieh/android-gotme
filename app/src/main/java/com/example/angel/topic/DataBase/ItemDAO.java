@@ -99,6 +99,11 @@ public class ItemDAO {
         return db.delete(TABLE_NAME, where , null) > 0;
     }
 
+    public boolean delete(String s){
+        String where = NAME_COLUMN + "=" + s;
+        return db.delete(TABLE_NAME, where, null) >0;
+    }
+
     public List<Item> getAll() {
         List<Item> result = new ArrayList<>();
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, null, null);

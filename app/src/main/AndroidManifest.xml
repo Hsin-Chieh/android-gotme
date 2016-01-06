@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.angel.topic" >
-    <users-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <users-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.example.angel.topic.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.example.angel.topic.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name=".MainActivity" >
+        </activity>
+
+        <activity android:name=".AboutActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-            <!--android:theme="@android:style/Theme.NoTitleBar"    去標題-->
-        <!--android:theme="@android:style/Theme.Dialog" />-->
-        <activity android:name=".testActivity"></activity>
+        <activity android:name=".ProfileSettingActivity"></activity>
+        <activity android:name=".DetailActivity"></activity>
+
+        <receiver
+            android:name="com.example.angel.topic.Json.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.angel.topic" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.example.angel.topic.Json.GCMNotificationIntentService" />
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".SignupActivity" android:theme="@style/AppTheme.Dark" />
+
+
+
     </application>
 
 </manifest>

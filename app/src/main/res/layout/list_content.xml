@@ -15,8 +15,7 @@
         android:id="@+id/photo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:visibility="invisible" />
+        android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
@@ -29,19 +28,19 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_centerVertical="true"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
             android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/date_text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center_vertical" />
+            android:gravity="center_vertical"
+            android:textColor="#4e4a4a"/>
 
     </LinearLayout>
 </LinearLayout>

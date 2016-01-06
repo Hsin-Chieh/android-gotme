@@ -75,7 +75,8 @@ public class Item {
     }
     public String getDatatime(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss");
-        return sdf.format(datatime);
+        return sdf.format(this.datatime);
+
     }
     public void setDatatime(long datatime){
         this.datatime = datatime;
