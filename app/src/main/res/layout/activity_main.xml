@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="2dp"/>
+
+    <include layout="@layout/frg_tab" />
+
+
+    <!--加入fragment元件
+    <fragment
+        class = "com.example.angel.topic.Fragment.Fragment_Tab_2"
+        android:id="@+id/place_fragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>-->
+
+</LinearLayout>
