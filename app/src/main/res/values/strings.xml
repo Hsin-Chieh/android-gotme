@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">JsonTest</string>
+    <string name="app_name">Topic</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 </resources>
